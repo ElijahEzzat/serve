@@ -24,7 +24,7 @@ class _BookingState extends State<Booking> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.indigo,
+          backgroundColor: Color(0xFFF99718),
           leading: IconButton(
             icon: const Icon(Icons.arrow_circle_left_sharp),
             onPressed: () => Navigator.of(context).pop(),
@@ -249,7 +249,7 @@ class _BookingState extends State<Booking> {
                     const SizedBox(height: 15.0),
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.indigo,
+                        color: Color(0xFFF99718),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       width: 200,

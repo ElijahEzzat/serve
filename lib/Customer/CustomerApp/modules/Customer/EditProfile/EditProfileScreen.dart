@@ -22,7 +22,7 @@ class _EditProfileState extends State<EditProfile> {
          debugShowCheckedModeBanner: false,
            home: Scaffold(
              appBar: AppBar(
-               backgroundColor: Colors.indigo,
+               backgroundColor: Color(0xFFF99718),
                leading: IconButton(
                  icon: const Icon(Icons.arrow_circle_left_sharp),
                  onPressed: () => Navigator.of(context).pop(),
@@ -48,7 +48,7 @@ class _EditProfileState extends State<EditProfile> {
              ),
              body: SingleChildScrollView(
                child: Container(
-                 color: Colors.indigo,
+                 color: Color(0xFFF99718),
                  padding: const EdgeInsets.only(top: 10.0),
                  child: Stack(
                    children:<Widget>[
@@ -76,11 +76,11 @@ class _EditProfileState extends State<EditProfile> {
                                    hintStyle: TextStyle(
                                        fontWeight: FontWeight.bold,
                                        fontSize:20,
-                                       color: Colors.indigo,
+                                       color: Color(0xFFF99718),
                                    ),
                                    prefixIcon: Icon(
                                        Icons.person,
-                                       color: Colors.indigo,
+                                       color:Color(0xFFF99718),
                                    ),
                                    border: OutlineInputBorder(
                                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -99,11 +99,11 @@ class _EditProfileState extends State<EditProfile> {
                                    hintStyle: TextStyle(
                                      fontWeight: FontWeight.bold,
                                      fontSize:20,
-                                     color: Colors.indigo,
+                                     color: Color(0xFFF99718),
                                    ),
                                    prefixIcon: Icon(
                                      Icons.email_sharp,
-                                     color: Colors.indigo,
+                                     color: Color(0xFFF99718),
                                    ),
                                    border: OutlineInputBorder(
                                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -122,11 +122,11 @@ class _EditProfileState extends State<EditProfile> {
                                    hintStyle: TextStyle(
                                      fontWeight: FontWeight.bold,
                                      fontSize:20,
-                                     color: Colors.indigo,
+                                     color: Color(0xFFF99718),
                                    ),
                                    prefixIcon: Icon(
                                      Icons.phone,
-                                     color: Colors.indigo,
+                                     color:Color(0xFFF99718),
                                    ),
                                    border: OutlineInputBorder(
                                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -140,14 +140,14 @@ class _EditProfileState extends State<EditProfile> {
                              child: DropdownButtonFormField(
                                icon: const Icon(
                                  Icons.arrow_drop_down_circle,
-                                 color: Colors.indigo,
+                                 color:Color(0xFFF99718),
                                ),
                                decoration: InputDecoration(
                                  labelText: 'City',
-                                 labelStyle: const TextStyle(color: Colors.indigo),
+                                 labelStyle: const TextStyle(color: Color(0xFFF99718)),
                                  prefixIcon: const Icon(
                                    Icons.location_city_outlined,
-                                   color: Colors.indigo,
+                                   color: Color(0xFFF99718),
                                  ),
                                  border: OutlineInputBorder(
                                    borderRadius: BorderRadius.circular(30.0),
@@ -176,14 +176,14 @@ class _EditProfileState extends State<EditProfile> {
                         child: DropdownButtonFormField(
                           icon: const Icon(
                             Icons.arrow_drop_down_circle,
-                            color: Colors.indigo,
+                            color: Color(0xFFF99718),
                           ),
                           decoration: InputDecoration(
                             labelText: 'District',
-                            labelStyle: const TextStyle(color: Colors.indigo),
+                            labelStyle: const TextStyle(color: Color(0xFFF99718)),
                             prefixIcon: const Icon(
                               Icons.home,
-                              color: Colors.indigo,
+                              color:Color(0xFFF99718),
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30.0),
@@ -223,7 +223,7 @@ class _EditProfileState extends State<EditProfile> {
                                children: [
                                  Container(
                                    decoration: BoxDecoration(
-                                     color: Colors.indigo ,
+                                     color: Color(0xFFF99718) ,
                                      borderRadius: BorderRadius.circular(20.0),
                                    ),
                                    child: MaterialButton(
@@ -248,7 +248,7 @@ class _EditProfileState extends State<EditProfile> {
                                  const SizedBox(width: 20),
                                  Container(
                                    decoration: BoxDecoration(
-                                     color: Colors.indigo ,
+                                     color: Color(0xFFF99718) ,
                                      borderRadius: BorderRadius.circular(20.0),
                                    ),
                                    child: MaterialButton(
@@ -286,7 +286,7 @@ class _EditProfileState extends State<EditProfile> {
                              child: Container(
                                padding: const EdgeInsets.all(5.0),
                                decoration: const BoxDecoration(
-                                   color: Colors.indigo ,
+                                   color: Color(0xFFF99718) ,
                                    shape: BoxShape.circle,
                                ),
                                child: IconButton(

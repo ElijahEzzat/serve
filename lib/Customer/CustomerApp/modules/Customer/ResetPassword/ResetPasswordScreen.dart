@@ -17,7 +17,7 @@ class _ResetPasswordState extends State<ResetPassword> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.indigo,
+          backgroundColor:Color(0xFFF99718),
           leading: IconButton(
             icon: const Icon(Icons.arrow_circle_left_sharp),
             onPressed: () => Navigator.of(context).pop(),
@@ -69,11 +69,11 @@ class _ResetPasswordState extends State<ResetPassword> {
                     hintStyle: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize:20,
-                      color: Colors.indigo,
+                      color:Color(0xFFF99718),
                     ),
                     prefixIcon: Icon(
                       Icons.lock,
-                      color: Colors.indigo,
+                      color: Color(0xFFF99718),
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -92,11 +92,11 @@ class _ResetPasswordState extends State<ResetPassword> {
                     hintStyle: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize:20,
-                      color: Colors.indigo,
+                      color:Color(0xFFF99718),
                     ),
                     prefixIcon: Icon(
                       Icons.lock,
-                      color: Colors.indigo,
+                      color:Color(0xFFF99718),
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -109,7 +109,7 @@ class _ResetPasswordState extends State<ResetPassword> {
               Container(
                 width: 200,
                 decoration: BoxDecoration(
-                  color: Colors.indigo ,
+                  color: Color(0xFFF99718) ,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: MaterialButton(

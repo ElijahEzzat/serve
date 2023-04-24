@@ -22,7 +22,7 @@ class _RequestsState extends State<Requests> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     border: Border.all(
-                      color: Colors.indigo,
+                      color: Color(0xFFF99718),
                       width: 3 ,
                     ),
                   ),
@@ -116,7 +116,7 @@ class _RequestsState extends State<Requests> {
                                    Container(
                                      height: 35,
                                      decoration: BoxDecoration(
-                                       color: Colors.indigoAccent ,
+                                       color: Color(0xFFF99718) ,
                                        borderRadius: BorderRadius.circular(20.0),
                                      ),
                                      child: MaterialButton(

@@ -16,7 +16,7 @@ class _ProfileState extends State<Profile> {
             children: [
                 Container(
                   decoration: const BoxDecoration(
-                    color: Colors.indigo ,
+                    color:Color(0xFFF99718),
                     borderRadius: BorderRadius.only(
                         bottomRight: Radius.circular(30.0) ,
                         bottomLeft: Radius.circular(30.0)),
@@ -48,7 +48,7 @@ class _ProfileState extends State<Profile> {
                 const SizedBox(height: 20),
                 Container(
                    decoration: BoxDecoration(
-                      color: Colors.indigo ,
+                      color: Color(0xFFF99718),
                       borderRadius: BorderRadius.circular(20.0),
                    ),
                    margin: const EdgeInsets.all(20.0),
@@ -73,7 +73,7 @@ class _ProfileState extends State<Profile> {
                 ),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.indigo ,
+                  color: Color(0xFFF99718),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 margin: const EdgeInsets.all(20.0),
@@ -98,7 +98,7 @@ class _ProfileState extends State<Profile> {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.indigo ,
+                  color:Color(0xFFF99718),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 margin: const EdgeInsets.all(20.0),
@@ -127,7 +127,7 @@ class _ProfileState extends State<Profile> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.indigo ,
+                      color:Color(0xFFF99718),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: MaterialButton(
@@ -151,7 +151,7 @@ class _ProfileState extends State<Profile> {
                   const SizedBox(width: 20),
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.indigo ,
+                      color:Color(0xFFF99718),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: MaterialButton(

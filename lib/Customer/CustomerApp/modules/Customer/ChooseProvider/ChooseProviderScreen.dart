@@ -16,7 +16,7 @@ class _ChooseProviderState extends State<ChooseProvider> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.indigo,
+          backgroundColor: Color(0xFFF99718),
           leading: IconButton(
             icon: const Icon(Icons.arrow_circle_left_sharp),
             onPressed: () => Navigator.of(context).pop(),
@@ -53,7 +53,7 @@ class _ChooseProviderState extends State<ChooseProvider> {
                   decoration: BoxDecoration(
                      borderRadius: BorderRadius.circular(15.0),
                      border: Border.all(
-                         color: Colors.indigo,
+                         color: Color(0xFFF99718),
                          width: 3 ,
                      ),
                   ),
@@ -90,7 +90,7 @@ class _ChooseProviderState extends State<ChooseProvider> {
                       Container(
                         height: 35,
                         decoration: BoxDecoration(
-                          color: Colors.indigo ,
+                          color: Color(0xFFF99718) ,
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         child: MaterialButton(

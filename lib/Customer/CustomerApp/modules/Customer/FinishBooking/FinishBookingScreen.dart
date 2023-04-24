@@ -17,7 +17,7 @@ class _FinishBookingState extends State<FinishBooking> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.indigo,
+            backgroundColor: Color(0xFFF99718),
             leading: IconButton(
               icon: const Icon(Icons.arrow_circle_left_sharp),
               onPressed: () => Navigator.of(context).pop(),
@@ -77,7 +77,7 @@ class _FinishBookingState extends State<FinishBooking> {
                               width: 230,
                               height: 50,
                               decoration: BoxDecoration(
-                                color: Colors.indigo ,
+                                color:Color(0xFFF99718) ,
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: Row(
@@ -119,7 +119,7 @@ class _FinishBookingState extends State<FinishBooking> {
                             width: 180,
                             height: 50,
                             decoration: BoxDecoration(
-                              color: Colors.indigo ,
+                              color:Color(0xFFF99718) ,
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             child: Row(
@@ -162,7 +162,7 @@ class _FinishBookingState extends State<FinishBooking> {
                               width: 180,
                               height: 50,
                               decoration: BoxDecoration(
-                                color: Colors.indigo ,
+                                color:Color(0xFFF99718),
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: Row(
@@ -206,7 +206,7 @@ class _FinishBookingState extends State<FinishBooking> {
                               width: 180,
                               height: 50,
                               decoration: BoxDecoration(
-                                color: Colors.indigo ,
+                                color:Color(0xFFF99718) ,
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: Row(
@@ -236,7 +236,7 @@ class _FinishBookingState extends State<FinishBooking> {
                       const SizedBox(height: 20),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.indigo,
+                          color:Color(0xFFF99718),
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         width: 200,
