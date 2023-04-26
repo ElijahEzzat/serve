@@ -29,7 +29,7 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
     'Giza',
   ];
 
-  final Map<String, List<String>> _items2 = {
+  final Map<String, List<String>> _city = {
     'Cairo': ['El-Ataba','El-Gezera','El-Zayton','Rod El-farag','Shobra', 'Nasr city'],
     'Giza': ['Bolak','El-Dokki','El-Harm','El-Maadi','El-Marg','El-Mohandeseen','El-Monib','El-Moski','El-Warrak',],
   };
@@ -397,13 +397,12 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
 
                   onChanged: (val){
                     setState(() {
-                      //selectedGovernorate = val!;
                       _selectedGovernorate = val;
                       _selectedCity = null;
                     });
                   },
 
-                  //value: selectedGovernorate,
+
 
 
                   validator: (value){
@@ -475,7 +474,7 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
 
 
                   value: _selectedCity,
-                  items: _items2[_selectedGovernorate]?.map((item) {
+                  items: _city[_selectedGovernorate]?.map((item) {
                     return DropdownMenuItem<String>(
                       value: item,
                       child: Text(item),
@@ -504,11 +503,20 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'password',
+                  obscureText: secure,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
                     labelStyle: TextStyle(color: Colors.grey),
                     prefixIcon: Icon(Icons.lock, color: Color(0xFFF99718),),
-                    suffix: Icon(Icons.remove_red_eye, color: Color(0xFFF99718)),
+                    suffixIcon: IconButton(
+                        onPressed: (){
+                          setState(() {
+                            secure = !secure;
+                          });
+                        },
+                        icon: secure ? Icon(Icons.visibility):Icon(Icons.visibility_off),
+                        color: Color(0xFFF99718)),
+
 
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xFFF99718), width: 2),
@@ -532,7 +540,7 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
                       ),
                     ),
 
-                    errorBorder: OutlineInputBorder(
+                    focusedErrorBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xFFFF0000), width: 2),
                       borderRadius:
                       BorderRadius.only(
@@ -543,7 +551,7 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
                       ),
                     ),
 
-                    focusedErrorBorder: OutlineInputBorder(
+                    errorBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xFFFF0000), width: 2),
                       borderRadius:
                       BorderRadius.only(
@@ -574,7 +582,6 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
                     return null;
                   },
 
-
                 ),
               ),
               SizedBox(
@@ -583,11 +590,21 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'confirm password',
+                  obscureText: confirmSecure,
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
                     labelStyle: TextStyle(color: Colors.grey),
                     prefixIcon: Icon(Icons.lock_open, color: Color(0xFFF99718),),
-                    suffix: Icon(Icons.remove_red_eye, color: Color(0xFFF99718)),
+                    suffixIcon: IconButton(
+                        onPressed: (){
+                          setState(() {
+                            confirmSecure = !confirmSecure;
+                          });
+                        },
+                        icon: confirmSecure ? Icon(Icons.visibility):Icon(Icons.visibility_off),
+                        color: Color(0xFFF99718)
+                    ),
+
 
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xFFF99718), width: 2),
@@ -633,6 +650,7 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
                       ),
                     ),
                   ),
+
 
                   controller: confirmPasswordController,
                   keyboardType: TextInputType.visiblePassword,

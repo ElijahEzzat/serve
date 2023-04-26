@@ -42,14 +42,21 @@ class _CategoriesState extends State<Categories> {
                              height: 80,
                              padding:const EdgeInsets.all(12.0) ,
                              width: double.infinity,
-                             child: const Text(
-                                 'Carpenter' ,
-                                 textAlign: TextAlign.center,
-                                 style: TextStyle(
-                                    fontSize: 40.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                 ),
+                             child: Container(
+                               decoration: BoxDecoration(
+                                 color: Color(0xFFF99718),
+                                 borderRadius: BorderRadius.circular(20)
+                               ),
+                               child: const Text(
+                                   'Carpenter' ,
+                                   textAlign: TextAlign.center,
+
+                                   style: TextStyle(
+                                      fontSize: 40.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                   ),
+                               ),
                              ),
                          ),
                        ],
@@ -76,13 +83,19 @@ class _CategoriesState extends State<Categories> {
                            height: 80,
                            padding:const EdgeInsets.all(12.0) ,
                            width: double.infinity,
-                           child: const Text(
-                             'Blacksmith' ,
-                             textAlign: TextAlign.center,
-                             style: TextStyle(
-                               fontSize: 40.0,
-                               fontWeight: FontWeight.bold,
-                               color: Colors.black,
+                           child: Container(
+                             decoration: BoxDecoration(
+                                 color: Color(0xFFF99718),
+                                 borderRadius: BorderRadius.circular(20)
+                             ),
+                             child: const Text(
+                               'Blacksmith' ,
+                               textAlign: TextAlign.center,
+                               style: TextStyle(
+                                 fontSize: 40.0,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.white,
+                               ),
                              ),
                            ),
                          ),
@@ -111,13 +124,19 @@ class _CategoriesState extends State<Categories> {
                            height: 80,
                            padding:const EdgeInsets.all(12.0) ,
                            width: double.infinity,
-                           child: const Text(
-                             'Cleaning' ,
-                             textAlign: TextAlign.center,
-                             style: TextStyle(
-                               fontSize: 40.0,
-                               fontWeight: FontWeight.bold,
-                               color: Colors.black,
+                           child: Container(
+                             decoration: BoxDecoration(
+                                 color: Color(0xFFF99718),
+                                 borderRadius: BorderRadius.circular(20)
+                             ),
+                             child: const Text(
+                               'Cleaning' ,
+                               textAlign: TextAlign.center,
+                               style: TextStyle(
+                                 fontSize: 40.0,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.white,
+                               ),
                              ),
                            ),
                          ),
@@ -146,13 +165,19 @@ class _CategoriesState extends State<Categories> {
                            height: 80,
                            padding:const EdgeInsets.all(12.0) ,
                            width: double.infinity,
-                           child: const Text(
-                             'Electricity' ,
-                             textAlign: TextAlign.center,
-                             style: TextStyle(
-                               fontSize: 40.0,
-                               fontWeight: FontWeight.bold,
-                               color: Colors.black,
+                           child: Container(
+                             decoration: BoxDecoration(
+                                 color: Color(0xFFF99718),
+                                 borderRadius: BorderRadius.circular(20)
+                             ),
+                             child: const Text(
+                               'Electricity' ,
+                               textAlign: TextAlign.center,
+                               style: TextStyle(
+                                 fontSize: 40.0,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.white,
+                               ),
                              ),
                            ),
                          ),
@@ -181,13 +206,19 @@ class _CategoriesState extends State<Categories> {
                            height:80,
                            padding:const EdgeInsets.all(12.0) ,
                            width: double.infinity,
-                           child: const Text(
-                             'Plumbing' ,
-                             textAlign: TextAlign.center,
-                             style: TextStyle(
-                               fontSize: 40.0,
-                               fontWeight: FontWeight.bold,
-                               color: Colors.black,
+                           child: Container(
+                             decoration: BoxDecoration(
+                                 color: Color(0xFFF99718),
+                                 borderRadius: BorderRadius.circular(20)
+                             ),
+                             child: const Text(
+                               'Plumbing' ,
+                               textAlign: TextAlign.center,
+                               style: TextStyle(
+                                 fontSize: 40.0,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.white,
+                               ),
                              ),
                            ),
                          ),
@@ -216,13 +247,19 @@ class _CategoriesState extends State<Categories> {
                            height: 80,
                            padding:const EdgeInsets.all(12.0) ,
                            width: double.infinity,
-                           child: const Text(
-                             'Painting' ,
-                             textAlign: TextAlign.center,
-                             style: TextStyle(
-                               fontSize: 40.0,
-                               fontWeight: FontWeight.bold,
-                               color: Colors.black,
+                           child: Container(
+                             decoration: BoxDecoration(
+                                 color: Color(0xFFF99718),
+                                 borderRadius: BorderRadius.circular(20)
+                             ),
+                             child: const Text(
+                               'Painting' ,
+                               textAlign: TextAlign.center,
+                               style: TextStyle(
+                                 fontSize: 40.0,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.white,
+                               ),
                              ),
                            ),
                          ),

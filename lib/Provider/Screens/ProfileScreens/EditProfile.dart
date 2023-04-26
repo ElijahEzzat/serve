@@ -9,11 +9,18 @@ class EditProfile extends StatefulWidget{
 
 class _EditProfileState extends State<EditProfile> {
 
-  var selectedGovernorate;
-  var selectedCity;
+  String? _selectedGovernorate;
+  String? _selectedCity;
 
-  List districts =['Bolak','El-Dokki','El-Haram','El-Maadi','El-Marg','El-Mohandeseen','El-Monib','El-Moski','El-Warrak','Nasr city','Shobra'];
+  final List<String> _Governorate = [
+    'Cairo',
+    'Giza',
+  ];
 
+  final Map<String, List<String>> _city = {
+    'Cairo': ['El-Ataba','El-Gezera','El-Zayton','Rod El-farag','Shobra', 'Nasr city'],
+    'Giza': ['Bolak','El-Dokki','El-Harm','El-Maadi','El-Marg','El-Mohandeseen','El-Monib','El-Moski','El-Warrak',],
+  };
 
   File? _image ;
   Future getImage () async{
@@ -218,19 +225,22 @@ class _EditProfileState extends State<EditProfile> {
 
                   ),
 
-                  items: ['Cairo','Giza']
-                      .map((e) => DropdownMenuItem(
-                    child: Text('$e'),
-                    value: e,
-                  )).toList(),
+                  value: _selectedGovernorate,
+                  items: _Governorate.map((item) {
+                    return DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(item),
+                    );
+                  }).toList(),
 
                   onChanged: (val){
                     setState(() {
-                      selectedGovernorate = val!;
+                      _selectedGovernorate = val;
+                      _selectedCity = null;
                     });
                   },
 
-                  value: selectedGovernorate,
+
                 ),
               ),
               SizedBox(
@@ -242,7 +252,7 @@ class _EditProfileState extends State<EditProfile> {
                   icon: Icon(Icons.arrow_drop_down_circle, color: Color(0xFFF99718),),
 
                   decoration: const InputDecoration(
-                    labelText: 'City',
+                    labelText: 'District',
                     labelStyle: TextStyle(color: Colors.grey),
                     prefixIcon: Icon(Icons.location_city, color: Color(0xFFF99718),),
 
@@ -270,18 +280,21 @@ class _EditProfileState extends State<EditProfile> {
 
                   ),
 
-                  items: districts.map((e) => DropdownMenuItem(
-                    child: Text('$e'),
-                    value: e,
-                  )).toList(),
+                  value: _selectedCity,
+                  items: _city[_selectedGovernorate]?.map((item) {
+                    return DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(item),
+                    );
+                  }).toList(),
 
                   onChanged: (val){
                     setState(() {
-                      selectedCity = val!;
+                      _selectedCity = val;
                     });
                   },
 
-                  value: selectedCity,
+
                 ),
               ),
 

@@ -11,14 +11,23 @@ class CustomerSignupPage extends StatefulWidget {
 class _CustomerSignupPageState extends State<CustomerSignupPage> {
 
   var name, e_mail, phone;
-  var selectedGovernorate;
-  var selectedCity;
+
   bool? isChecked = false;
   bool secure = true;
   bool confirmSecure = true;
 
-  List districts =['Bolak','El-Dokki','El-Haram','El-Maadi','El-Marg','El-Mohandeseen','El-Monib','El-Moski','El-Warrak','Nasr city','Shobra'];
+  String? _selectedGovernorate;
+  String? _selectedCity;
 
+  final List<String> _Governorate = [
+    'Cairo',
+    'Giza',
+  ];
+
+  final Map<String, List<String>> _city = {
+    'Cairo': ['El-Ataba','El-Gezera','El-Zayton','Rod El-farag','Shobra', 'Nasr city'],
+    'Giza': ['Bolak','El-Dokki','El-Harm','El-Maadi','El-Marg','El-Mohandeseen','El-Monib','El-Moski','El-Warrak',],
+  };
 
 
   var nameController = TextEditingController();
@@ -34,7 +43,7 @@ class _CustomerSignupPageState extends State<CustomerSignupPage> {
     bool submit = nameController.text.isEmpty||emailController.text.isEmpty
                   ||phoneController.text.isEmpty||passwordController.text.isEmpty
                   ||confirmPasswordController.text.isEmpty
-                  ||selectedGovernorate==null||selectedCity==null||isChecked==false ? false : true;
+                  ||_selectedGovernorate==null||_selectedCity==null||isChecked==false ? false : true;
 
     return submit;
   }
@@ -371,7 +380,8 @@ class _CustomerSignupPageState extends State<CustomerSignupPage> {
                     ),
                   ),
 
-                  items: ['Cairo','Giza']
+                  value: _selectedGovernorate,
+                  items: _Governorate
                       .map((e) => DropdownMenuItem(
                     child: Text('$e'),
                     value: e,
@@ -379,15 +389,16 @@ class _CustomerSignupPageState extends State<CustomerSignupPage> {
 
                   onChanged: (val){
                     setState(() {
-                      selectedGovernorate = val!;
+                      _selectedGovernorate = val;
+                      _selectedCity = null;
                     });
                   },
 
-                  value: selectedGovernorate,
+
 
 
                   validator: (value){
-                    if(selectedGovernorate == null){
+                    if(_selectedGovernorate == null){
                       return 'Please choose your Governorate';
                     }
                     return null;
@@ -404,7 +415,7 @@ class _CustomerSignupPageState extends State<CustomerSignupPage> {
                   icon: Icon(Icons.arrow_drop_down_circle, color: Color(0xFFF99718),),
 
                   decoration: const InputDecoration(
-                    labelText: 'City',
+                    labelText: 'District',
                     labelStyle: TextStyle(color: Colors.grey),
                     prefixIcon: Icon(Icons.location_city, color: Color(0xFFF99718),),
 
@@ -453,21 +464,22 @@ class _CustomerSignupPageState extends State<CustomerSignupPage> {
 
                   ),
 
-                  items: districts.map((e) => DropdownMenuItem(
+                  value: _selectedCity,
+                  items: _city[_selectedGovernorate]?.map((e) => DropdownMenuItem(
                     child: Text('$e'),
                     value: e,
                   )).toList(),
 
                   onChanged: (val){
                     setState(() {
-                      selectedCity = val!;
+                      _selectedCity = val!;
                     });
                   },
 
-                  value: selectedCity,
+
 
                   validator: (value){
-                    if(selectedCity == null){
+                    if(_selectedCity == null){
                       return 'Please choose your district';
                     }
                     return null;
@@ -483,7 +495,7 @@ class _CustomerSignupPageState extends State<CustomerSignupPage> {
                 child: TextFormField(
                   obscureText: secure,
                   decoration: InputDecoration(
-                    labelText: 'password',
+                    labelText: 'Password',
                     labelStyle: TextStyle(color: Colors.grey),
                     prefixIcon: Icon(Icons.lock, color: Color(0xFFF99718),),
                     suffixIcon: IconButton(
@@ -570,7 +582,7 @@ class _CustomerSignupPageState extends State<CustomerSignupPage> {
                 child: TextFormField(
                   obscureText: confirmSecure,
                   decoration: InputDecoration(
-                    labelText: 'confirm password',
+                    labelText: 'Confirm Password',
                     labelStyle: TextStyle(color: Colors.grey),
                     prefixIcon: Icon(Icons.lock_open, color: Color(0xFFF99718),),
                     suffixIcon: IconButton(

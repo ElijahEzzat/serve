@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:serve_me/Customer/CustomerApp/modules/Customer/ChooseProvider/ProviderDetails.dart';
 
 import '../FinishBooking/FinishBookingScreen.dart';
 
@@ -75,7 +76,10 @@ class _ChooseProviderState extends State<ChooseProvider> {
                         ),
                       ),
                       TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => ProviderDetails()));
+                          },
                           child:
                             const Text(
                                'See Details',
