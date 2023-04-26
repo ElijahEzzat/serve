@@ -109,8 +109,8 @@ class ScheduledRequestDetails extends StatelessWidget{
             height: 10.0,
           ),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          Container(
+            width: 350,
             child: TextFormField(
               enabled: false,
               decoration: const InputDecoration(
@@ -130,8 +130,8 @@ class ScheduledRequestDetails extends StatelessWidget{
             height: 10.0,
           ),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          Container(
+            width: 350,
             child: TextFormField(
               enabled: false,
               decoration: const InputDecoration(

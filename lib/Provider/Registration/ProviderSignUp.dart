@@ -12,13 +12,29 @@ class ProviderSignupPage extends StatefulWidget {
 
 class _ProviderSignupPageState extends State<ProviderSignupPage> {
   var name, e_mail, phone;
-  var selectedGovernorate;
-  var selectedCity;
+
+
   bool? isChecked = false;
+
   bool secure = true;
   bool confirmSecure = true;
 
-  List districts =['Bolak','El-Dokki','El-Haram','El-Maadi','El-Marg','El-Mohandeseen','El-Monib','El-Moski','El-Warrak','Nasr city','Shobra'];
+
+
+  String? _selectedGovernorate;
+  String? _selectedCity;
+
+  final List<String> _Governorate = [
+    'Cairo',
+    'Giza',
+  ];
+
+  final Map<String, List<String>> _items2 = {
+    'Cairo': ['El-Ataba','El-Gezera','El-Zayton','Rod El-farag','Shobra', 'Nasr city'],
+    'Giza': ['Bolak','El-Dokki','El-Harm','El-Maadi','El-Marg','El-Mohandeseen','El-Monib','El-Moski','El-Warrak',],
+  };
+
+
 
 
   var nameController = TextEditingController();
@@ -33,7 +49,7 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
     bool submit = nameController.text.isEmpty||emailController.text.isEmpty
         ||phoneController.text.isEmpty||passwordController.text.isEmpty
         ||confirmPasswordController.text.isEmpty
-        ||selectedGovernorate==null||selectedCity==null||isChecked==false ? false : true;
+        ||_selectedGovernorate==null||_selectedCity==null||isChecked==false ? false : true;
 
     return submit;
   }
@@ -309,12 +325,14 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
                   },
                 ),
               ),
+
               SizedBox(
                 height: 15.0,
               ),
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: DropdownButtonFormField(
+                child: DropdownButtonFormField<String>(
                   icon: Icon(Icons.arrow_drop_down_circle, color: Color(0xFFF99718),),
 
                   decoration: const InputDecoration(
@@ -368,23 +386,28 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
 
                   ),
 
-                  items: ['Cairo','Giza']
-                      .map((e) => DropdownMenuItem(
-                    child: Text('$e'),
-                    value: e,
-                  )).toList(),
+
+                  value: _selectedGovernorate,
+                  items: _Governorate.map((item) {
+                    return DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(item),
+                    );
+                  }).toList(),
 
                   onChanged: (val){
                     setState(() {
-                      selectedGovernorate = val!;
+                      //selectedGovernorate = val!;
+                      _selectedGovernorate = val;
+                      _selectedCity = null;
                     });
                   },
 
-                  value: selectedGovernorate,
+                  //value: selectedGovernorate,
 
 
                   validator: (value){
-                    if(selectedGovernorate == null){
+                    if(_selectedGovernorate == null){
                       return 'Please choose your Governorate';
                     }
                     return null;
@@ -396,7 +419,7 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: DropdownButtonFormField(
+                child: DropdownButtonFormField<String>(
                   icon: Icon(Icons.arrow_drop_down_circle, color: Color(0xFFF99718),),
 
                   decoration: const InputDecoration(
@@ -451,22 +474,23 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
                   ),
 
 
-                  items: districts
-                      .map((e) => DropdownMenuItem(
-                    child: Text('$e'),
-                    value: e,
-                  )).toList(),
+                  value: _selectedCity,
+                  items: _items2[_selectedGovernorate]?.map((item) {
+                    return DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(item),
+                    );
+                  }).toList(),
 
                   onChanged: (val){
                     setState(() {
-                      selectedCity = val!;
+                      _selectedCity = val;
                     });
                   },
 
-                  value: selectedCity,
 
                   validator: (value){
-                    if(selectedCity == null){
+                    if(_selectedCity == null){
                       return 'Please choose your City';
                     }
                     return null;

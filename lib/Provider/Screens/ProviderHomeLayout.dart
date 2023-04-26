@@ -12,7 +12,8 @@ class ProviderHomeLayout extends StatefulWidget{
 
 class _ProviderHomeLayoutState extends State<ProviderHomeLayout> {
 
-  List<Widget> screens = [ RequestsScreen(),
+  List<Widget> screens = [
+    RequestsScreen(),
     ScheduleScreen(),
     ReviewScreen(),
     WalletScreen(),

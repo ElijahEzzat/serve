@@ -86,7 +86,7 @@ class RequestDetails extends StatelessWidget{
 
 
           Container(
-            height: 50.0,
+            height: 45.0,
             width: 350.0,
             padding: EdgeInsets.all(10.0),
             decoration: BoxDecoration(
@@ -97,9 +97,9 @@ class RequestDetails extends StatelessWidget{
               borderRadius: BorderRadius.circular(20.0),
             ),
             child: Text(
-              'date of service',
+              'date & time',
               style: TextStyle(
-                fontSize: 14.0,
+                fontSize: 15.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.black45,
               ),
@@ -110,8 +110,8 @@ class RequestDetails extends StatelessWidget{
             height: 10.0,
           ),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          Container(
+            width: 350,
             child: TextFormField(
               enabled: false,
               decoration: const InputDecoration(
@@ -131,8 +131,8 @@ class RequestDetails extends StatelessWidget{
             height: 10.0,
           ),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          Container(
+            width: 350,
             child: TextFormField(
               enabled: false,
               decoration: const InputDecoration(
