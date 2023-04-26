@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:serve_me/Report.dart';
 
 
-class RequestDetails extends StatelessWidget{
+class HistoryRequestDetails extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,65 +172,6 @@ class RequestDetails extends StatelessWidget{
                 color: Colors.black45,
               ),
             ),
-          ),
-
-          SizedBox(
-            height: 10.0,
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF1DBD1D),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-
-                onPressed: (){
-
-                  /*Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) => ProviderHomeLayout()));*/
-                },
-
-                child: const Text(
-                  'Accept',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 50.0,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFF85E2F),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-
-                onPressed: (){
-
-                  /*Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) => ProviderHomeLayout()));*/
-                },
-
-                child: const Text(
-                  'Reject',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-            ],
           ),
 
           SizedBox(

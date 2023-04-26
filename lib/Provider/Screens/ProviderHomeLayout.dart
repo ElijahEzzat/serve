@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:serve_me/Provider/Screens/HistoryScreens/History.dart';
 import 'package:serve_me/Provider/Screens/ProfileScreens/ProfileScreen.dart';
 import 'package:serve_me/Provider/Screens/Requests Screens/RequestsScreen.dart';
 import 'package:serve_me/Provider/Screens/Reviews Screens/ReviewScreen.dart';
@@ -37,6 +38,19 @@ class _ProviderHomeLayoutState extends State<ProviderHomeLayout> {
           style: TextStyle(fontSize: 24),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HistoryScreen()));
+              },
+
+              icon: Icon(
+                Icons.history,
+                color: Color(0xFFFFFFFF),
+              ),
+          )
+        ],
       ),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
