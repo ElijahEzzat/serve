@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/Provider/Registration/ProviderSignUp.dart';
 import 'package:serve_me/SplashScreen.dart';
 
 
