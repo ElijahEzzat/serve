@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/Forgot Password/ResetPassword.dart';
+import 'package:serve_me/Customer/Registration/CustomerForgot Password/ResetPassword.dart';
 
 
 class OTP extends StatefulWidget {

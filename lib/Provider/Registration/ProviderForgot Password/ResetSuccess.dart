@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/Customer/Registration/CustomerLoginPage.dart';
+import 'package:serve_me/Provider/Registration/ProviderLoginPage.dart';
 
-class CustomerLogSuccess extends StatelessWidget {  @override
+class ResetPasswordSuccess extends StatelessWidget {  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body:
@@ -20,7 +20,7 @@ class CustomerLogSuccess extends StatelessWidget {  @override
               ),
 
               Text(
-                'Your Account created Successfully',
+                'Password reset Successfully',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 24.0,
@@ -33,7 +33,7 @@ class CustomerLogSuccess extends StatelessWidget {  @override
               TextButton(
                 onPressed: (){
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CustomerLoginPage()));
+                      MaterialPageRoute(builder: (context) => ProviderLoginPage()));
                 },
                 child:const Text(
                   'Login Now',

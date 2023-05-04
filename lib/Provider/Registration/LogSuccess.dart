@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/LoginPage.dart';
+import 'package:serve_me/Provider/Registration/ProviderLoginPage.dart';
 
 class ProviderLogSuccess extends StatelessWidget {  @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ProviderLogSuccess extends StatelessWidget {  @override
               TextButton(
                 onPressed: (){
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
+                      MaterialPageRoute(builder: (context) => ProviderLoginPage()));
                 },
                 child:const Text(
                   'Login Now',

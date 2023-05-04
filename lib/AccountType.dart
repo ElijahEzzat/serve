@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/Customer/Registration/CustomerSignUp.dart';
-import 'package:serve_me/Provider/Registration/ProviderSignUp.dart';
+import 'package:serve_me/Customer/Registration/CustomerLoginPage.dart';
+import 'package:serve_me/Provider/Registration/ProviderLoginPage.dart';
 
 class AccountType extends StatelessWidget {
   @override
@@ -40,7 +40,7 @@ class AccountType extends StatelessWidget {
                   child: InkWell(
                     onTap: (){
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => CustomerSignupPage()));
+                          MaterialPageRoute(builder: (context) => CustomerLoginPage()));
                     },
                     child:
                       Column(
@@ -76,7 +76,7 @@ class AccountType extends StatelessWidget {
                   child: InkWell(
                     onTap: (){
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ProviderSignupPage()));
+                          MaterialPageRoute(builder: (context) => ProviderLoginPage()));
                     },
                     child:
                     Column(

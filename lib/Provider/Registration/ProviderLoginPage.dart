@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:serve_me/AccountType.dart';
-import 'package:serve_me/Customer/CustomerApp/layout/Customer/Home_Layout/HomeScreen.dart';
-import 'package:serve_me/Forgot%20Password/ForgetPassword.dart';
+import 'package:serve_me/Provider/Registration/ProviderForgot Password/ForgetPassword.dart';
+import 'package:serve_me/Provider/Registration/ProviderSignUp.dart';
 import 'package:serve_me/Provider/Screens/ProviderHomeLayout.dart';
 
-class LoginPage extends StatefulWidget{
+class ProviderLoginPage extends StatefulWidget{
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<ProviderLoginPage> createState() => _ProviderLoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _ProviderLoginPageState extends State<ProviderLoginPage> {
 
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -79,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
-                Padding(
+               /* Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(
                     children: [
@@ -150,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                ),
+                ),*/
 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -328,15 +327,8 @@ class _LoginPageState extends State<LoginPage> {
 
                   onPressed: (){
                     if(formKey.currentState!.validate()){
-                      if(ProviderChecked == true){
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => ProviderHomeLayout()));
-                      }
-                      else{
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Home()));
-                      }
-
                     }
                   },
 
@@ -386,7 +378,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextButton(
                         onPressed: (){
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => AccountType()));
+                              MaterialPageRoute(builder: (context) => ProviderSignupPage()));
                           },
                         child:const Text(
                           'SignUp',

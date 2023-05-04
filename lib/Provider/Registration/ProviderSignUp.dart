@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/LoginPage.dart';
+import 'package:serve_me/Provider/Registration/ProviderLoginPage.dart';
 import 'package:serve_me/Provider/Registration/ProviderOTP.dart';
 
 class ProviderSignupPage extends StatefulWidget {
@@ -782,7 +782,7 @@ class _ProviderSignupPageState extends State<ProviderSignupPage> {
                   TextButton(
                     onPressed: (){
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()));
+                          MaterialPageRoute(builder: (context) => ProviderLoginPage()));
                     },
                     child:const Text(
                       'Login',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/Forgot%20Password/ResetSuccess.dart';
+import 'package:serve_me/Provider/Registration/ProviderForgot Password/ResetSuccess.dart';
 
 class ResetPassword extends StatefulWidget{
 

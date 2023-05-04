@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/Forgot%20Password/OTP.dart';
+import 'package:serve_me/Customer/Registration/CustomerForgot Password/OTP.dart';
 
 class ForgotPassword extends StatefulWidget{
 
