@@ -34,6 +34,12 @@ class _ProfileScreen extends State<ProfileScreen> {
                         backgroundImage: AssetImage('assets/images/provider.png'),
                         //foregroundImage: _image == null ? null : FileImage(_image!),
                       ),
+                      Text(
+                        'Provider Name',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
                 ],

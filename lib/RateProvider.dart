@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:serve_me/Provider/Screens/ProviderHomeLayout.dart';
 
-class ReportCustomer extends StatefulWidget{
+class RateProvider extends StatefulWidget{
 
   @override
-  State<ReportCustomer> createState() => _ReportCustomerState();
+  State<RateProvider> createState() => _RateProviderState();
 }
 
-class _ReportCustomerState extends State<ReportCustomer> {
+class _RateProviderState extends State<RateProvider> {
   var formKey = GlobalKey<FormState>();
 
   var reportController = TextEditingController();
+  var rattingValue;
 
 
   @override
@@ -19,7 +21,7 @@ class _ReportCustomerState extends State<ReportCustomer> {
       appBar: AppBar(
         backgroundColor: Color(0xFFF99718),
         title: Text(
-          'Report',
+          'Rating',
           style: TextStyle(fontSize: 24),
         ),
         centerTitle: true,
@@ -77,8 +79,57 @@ class _ReportCustomerState extends State<ReportCustomer> {
                 height: 50.0,
               ),
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              Container(
+                width: 300,
+                height: 60,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Color(0xFFF99718),
+                    width: 2,
+                  ),
+
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: RatingBar.builder(
+                    itemCount: 5,
+                    initialRating: 0.5,
+                    minRating: 0.5,
+                    allowHalfRating: true,
+
+                    itemBuilder: (context, index) => const Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                    ),
+
+                    onRatingUpdate: (value){
+                      rattingValue=value;
+                      print(value);
+                    }
+
+                ),
+              ),
+
+              SizedBox(
+                height: 15,
+              ),
+
+              Container(
+                width: 380,
+                height: 30,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Review',
+                  style: TextStyle(
+                    color: Color(0xFF646464),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+
+              Container(
+                width: 350,
                 child: TextFormField(
                   maxLines: 10,
                   decoration: const InputDecoration(
@@ -147,10 +198,10 @@ class _ReportCustomerState extends State<ReportCustomer> {
 
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Please Write your Report';
+                      return 'Please Write your Review';
                     }
                     if(value == ' '){
-                      return 'Please Write your Report';
+                      return 'Please Write your Review';
                     }
                     return null;
                   },
@@ -178,7 +229,7 @@ class _ReportCustomerState extends State<ReportCustomer> {
                 },
 
                 child: const Text(
-                  'Send Report',
+                  'Submit',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
