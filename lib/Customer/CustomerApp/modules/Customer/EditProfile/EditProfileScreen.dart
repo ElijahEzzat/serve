@@ -274,15 +274,15 @@ class _EditProfileState extends State<EditProfile> {
                         children: <Widget>[
                            ClipOval(
                              child: Image.asset(
-                               'assets/images/Tawfik.jpg',
+                               'assets/images/customer.jpg',
                                width: 150,
                                height: 150,
                                fit: BoxFit.cover,
                              ),
                            ),
                            Positioned(
-                             bottom: 5,
-                             right: 15.5,
+                             bottom: 0,
+                             right: 0,
                              child: Container(
                                padding: const EdgeInsets.all(5.0),
                                decoration: const BoxDecoration(

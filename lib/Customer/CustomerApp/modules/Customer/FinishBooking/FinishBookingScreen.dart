@@ -17,6 +17,7 @@ class _FinishBookingState extends State<FinishBooking> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
+            centerTitle: true,
             backgroundColor: Color(0xFFF99718),
             leading: IconButton(
               icon: const Icon(Icons.arrow_circle_left_sharp),
@@ -26,7 +27,7 @@ class _FinishBookingState extends State<FinishBooking> {
               'Confirm Booking ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 30,
+                fontSize: 22,
               ),
             ),
             actions: [
@@ -54,69 +55,25 @@ class _FinishBookingState extends State<FinishBooking> {
                         bottomRight: Radius.circular(30.0) ,
                         bottomLeft: Radius.circular(30.0)),
                   ),
-
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 5),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Column(
-                          children: [
-                            const Text(
-                               ' Booking Date : ',
-                               style: TextStyle(
-                                   fontSize: 30 ,
-                                   fontWeight: FontWeight.bold,
-                                   color: Colors.black,
-                               ),
-                            ),
-                            const SizedBox(height: 15),
-                            Container(
-                              width: 230,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color:Color(0xFFF99718) ,
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              child: Row(
-                                children:  const [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 20),
-                                    child: Icon(
-                                      Icons.date_range_outlined,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 15.0),
-                                  Text(
-                                    'Nov 10,2023',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25.0 ,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Column(
+
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
                         children: [
                           const Text(
-                            ' Booking Time : ',
-                            style: TextStyle(
-                                fontSize: 30 ,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                            ),
+                             ' Booking Date : ',
+                             style: TextStyle(
+                                 fontSize: 24 ,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.black,
+                             ),
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 5),
                           Container(
-                            width: 180,
+                            width: 230,
                             height: 50,
                             decoration: BoxDecoration(
                               color:Color(0xFFF99718) ,
@@ -127,13 +84,13 @@ class _FinishBookingState extends State<FinishBooking> {
                                 Padding(
                                   padding: EdgeInsets.only(left: 20),
                                   child: Icon(
-                                    Icons.timer,
+                                    Icons.date_range_outlined,
                                     color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(width: 15.0),
                                 Text(
-                                  '09:00',
+                                  'Nov 10,2023',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 25.0 ,
@@ -145,122 +102,163 @@ class _FinishBookingState extends State<FinishBooking> {
                           ),
                         ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Column(
-                          children: [
-                            const Text(
-                              ' Booking District : ',
-                              style: TextStyle(
-                                  fontSize: 30 ,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                              ),
-                            ),
-                            const SizedBox(height: 15),
-                            Container(
-                              width: 180,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color:Color(0xFFF99718),
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              child: Row(
-                                children:  const [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 20),
-                                    child: Icon(
-                                      Icons.home,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 15.0),
-                                  Text(
-                                    'Shobra',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25.0 ,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Column(
-                          children: [
-                            const Text(
-                              ' Your Problem : ',
-                              style: TextStyle(
-                                fontSize: 30 ,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                            const SizedBox(height: 15),
-                            Container(
-                              width: 180,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color:Color(0xFFF99718) ,
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              child: Row(
-                                children:  const [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 20),
-                                    child: Icon(
-                                      Icons.report_problem,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 15.0),
-                                  Text(
-                                    'jgjgjj',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25.0 ,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      Container(
-                        decoration: BoxDecoration(
-                          color:Color(0xFFF99718),
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                        width: 200,
-                        child: MaterialButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Home()),
-                            );
-                          },
-                          child: const Text(
-                            'Finish',
-                            style: TextStyle(
-                              fontSize: 30,
+                    ),
+                    Column(
+                      children: [
+                        const Text(
+                          ' Booking Time : ',
+                          style: TextStyle(
+                              fontSize: 24 ,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
+                              color: Colors.black,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Container(
+                          width: 180,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color:Color(0xFFF99718) ,
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Row(
+                            children:  const [
+                              Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Icon(
+                                  Icons.timer,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 5.0),
+                              Text(
+                                '09:00',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25.0 ,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Column(
+                      children: [
+                        const Text(
+                          ' Booking District : ',
+                          style: TextStyle(
+                              fontSize: 24 ,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Container(
+                          width: 180,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color:Color(0xFFF99718),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Row(
+                            children:  const [
+                              Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Icon(
+                                  Icons.home,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 5.0),
+                              Text(
+                                'Shobra',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25.0 ,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Column(
+                      children: [
+                        const Text(
+                          ' Your Problem : ',
+                          style: TextStyle(
+                            fontSize: 24 ,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Container(
+                          width: 180,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color:Color(0xFFF99718) ,
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Row(
+                            children:  const [
+                              Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Icon(
+                                  Icons.report_problem,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 15.0),
+                              Text(
+                                'jgjgjj',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25.0 ,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 25),
+                    Container(
+                      decoration: BoxDecoration(
+                        color:Color(0xFFF99718),
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      width: 120,
+                      child: MaterialButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Home()),
+                          );
+                        },
+                        child: const Text(
+                          'Finish',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                      const SizedBox(height: 7.0),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 7.0),
+                  ],
                 ),
               ],
             ),

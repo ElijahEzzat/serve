@@ -25,6 +25,8 @@ class _ProviderCreateProfile extends State<ProviderCreateProfile>{
   }
 
   File? _image ;
+  var ID_front_Side;
+  var ID_back_Side;
 
   Future getImage () async{
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
@@ -39,9 +41,15 @@ class _ProviderCreateProfile extends State<ProviderCreateProfile>{
     });
   }
 
-  String? _validateImage(File? image) {
+  String? _validateImage(File? image, var image2, var image3 ) {
     if (image == null) {
-      return 'Please upload Your Picture & ID\'s images';
+      return 'Please upload Your Profile image';
+    }
+    if (image2 == null) {
+      return 'Please upload Your ID\'s images';
+    }
+    if (image3 == null) {
+      return 'Please upload Your ID\'s images';
     }
     return null;
   }
@@ -295,6 +303,7 @@ class _ProviderCreateProfile extends State<ProviderCreateProfile>{
 
                           onPressed:  () async {
                             final result  = await FilePicker.platform.pickFiles();
+                            ID_front_Side = result;
 
 
                             if(result == null) return;
@@ -372,6 +381,7 @@ class _ProviderCreateProfile extends State<ProviderCreateProfile>{
 
                           onPressed:  () async {
                             final result  = await FilePicker.platform.pickFiles();
+                            ID_back_Side = result;
 
 
                             if(result == null) return;
@@ -410,7 +420,7 @@ class _ProviderCreateProfile extends State<ProviderCreateProfile>{
 
                 onPressed: () {
 
-                  String? error = _validateImage(_image);
+                  String? error = _validateImage(_image, ID_front_Side, ID_back_Side);
                   if (error != null) {
                     // Show error message
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -431,11 +441,23 @@ class _ProviderCreateProfile extends State<ProviderCreateProfile>{
                 },
 
                 child: const Text(
-                  'SignUp',
+                  'Submit',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 24.0,
+                  ),
+                ),
+              ),
+
+              Container(
+                width: 380,
+                child: Text(
+                  '* Note:\n\t\t\t\t\t\t\tWe will send you a message that has\n\t\t\t\t\t\t\tdate, time & the address to meet the\n\t\t\t\t\t\t\tmanager & submit your official papers\n\t\t\t\t\t\t\tthat you have uploaded to activate your\n\t\t\t\t\t\t\taccount.',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

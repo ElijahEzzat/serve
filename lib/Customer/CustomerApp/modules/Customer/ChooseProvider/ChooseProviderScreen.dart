@@ -18,10 +18,12 @@ class _ChooseProviderState extends State<ChooseProvider> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFF99718),
+          centerTitle: true,
           leading: IconButton(
             icon: const Icon(Icons.arrow_circle_left_sharp),
             onPressed: () => Navigator.of(context).pop(),
           ),
+
           title: const Text(
             'Choose Your Provider',
             style: TextStyle(
@@ -65,11 +67,11 @@ class _ChooseProviderState extends State<ChooseProvider> {
                       ),
                       const CircleAvatar(
                         radius: 60.0,
-                        backgroundImage: AssetImage('assets/images/Tifa.jpg'),
+                        backgroundImage: AssetImage('assets/images/provider.png'),
                       ),
                       const SizedBox(height: 5),
                       const Text(
-                         'Tifa Wageh',
+                         'Provider Name',
                         style: TextStyle(
                            fontSize:20 ,
                            fontWeight: FontWeight.bold,

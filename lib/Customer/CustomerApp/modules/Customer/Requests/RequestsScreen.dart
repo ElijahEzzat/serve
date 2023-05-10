@@ -39,18 +39,18 @@ class _RequestsState extends State<Requests> {
                                   padding: EdgeInsets.only(left: 15.0),
                                   child: CircleAvatar(
                                     radius: 50.0,
-                                    backgroundImage: AssetImage('assets/images/Tifa.jpg'),
+                                    backgroundImage: AssetImage('assets/images/provider.png'),
                                   ),
                                 ),
                                 SizedBox(height: 5),
                                 Padding(
                                   padding:EdgeInsets.only(left: 15),
                                   child: Text(
-                                    'Tifa Wageh',
+                                    'Provider Name',
                                     style: TextStyle(
-                                      fontSize:20 ,
+                                      fontSize:18 ,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.red,
+                                      color: Colors.black54,
                                     ),
                                   ),
                                 ),
@@ -96,7 +96,7 @@ class _RequestsState extends State<Requests> {
                                      height: 35,
                                      width: 100,
                                      decoration: BoxDecoration(
-                                       color: Colors.yellow ,
+                                       color: Color(0xFFE5B405) ,
                                        borderRadius: BorderRadius.circular(20.0),
                                      ),
                                      child: const Padding(

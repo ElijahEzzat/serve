@@ -39,9 +39,9 @@ class _CategoriesState extends State<Categories> {
                             ),
                          ),
                          Container(
-                             height: 80,
+                             height: 60,
+                             width: 200,
                              padding:const EdgeInsets.all(12.0) ,
-                             width: double.infinity,
                              child: Container(
                                decoration: BoxDecoration(
                                  color: Color(0xFFF99718),
@@ -52,7 +52,7 @@ class _CategoriesState extends State<Categories> {
                                    textAlign: TextAlign.center,
 
                                    style: TextStyle(
-                                      fontSize: 40.0,
+                                      fontSize: 28.0,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
                                    ),
@@ -80,9 +80,9 @@ class _CategoriesState extends State<Categories> {
                            ),
                          ),
                          Container(
-                           height: 80,
+                           height: 60,
+                           width: 220,
                            padding:const EdgeInsets.all(12.0) ,
-                           width: double.infinity,
                            child: Container(
                              decoration: BoxDecoration(
                                  color: Color(0xFFF99718),
@@ -92,7 +92,7 @@ class _CategoriesState extends State<Categories> {
                                'Blacksmith' ,
                                textAlign: TextAlign.center,
                                style: TextStyle(
-                                 fontSize: 40.0,
+                                 fontSize: 30.0,
                                  fontWeight: FontWeight.bold,
                                  color: Colors.white,
                                ),
@@ -121,9 +121,9 @@ class _CategoriesState extends State<Categories> {
                            ),
                          ),
                          Container(
-                           height: 80,
+                           height: 60,
                            padding:const EdgeInsets.all(12.0) ,
-                           width: double.infinity,
+                           width: 200,
                            child: Container(
                              decoration: BoxDecoration(
                                  color: Color(0xFFF99718),
@@ -133,7 +133,7 @@ class _CategoriesState extends State<Categories> {
                                'Cleaning' ,
                                textAlign: TextAlign.center,
                                style: TextStyle(
-                                 fontSize: 40.0,
+                                 fontSize: 30.0,
                                  fontWeight: FontWeight.bold,
                                  color: Colors.white,
                                ),
@@ -162,9 +162,9 @@ class _CategoriesState extends State<Categories> {
                            ),
                          ),
                          Container(
-                           height: 80,
+                           height: 60,
                            padding:const EdgeInsets.all(12.0) ,
-                           width: double.infinity,
+                           width: 200,
                            child: Container(
                              decoration: BoxDecoration(
                                  color: Color(0xFFF99718),
@@ -174,7 +174,7 @@ class _CategoriesState extends State<Categories> {
                                'Electricity' ,
                                textAlign: TextAlign.center,
                                style: TextStyle(
-                                 fontSize: 40.0,
+                                 fontSize: 30.0,
                                  fontWeight: FontWeight.bold,
                                  color: Colors.white,
                                ),
@@ -203,9 +203,9 @@ class _CategoriesState extends State<Categories> {
                            ),
                          ),
                          Container(
-                           height:80,
+                           height:60,
                            padding:const EdgeInsets.all(12.0) ,
-                           width: double.infinity,
+                           width: 200,
                            child: Container(
                              decoration: BoxDecoration(
                                  color: Color(0xFFF99718),
@@ -215,7 +215,7 @@ class _CategoriesState extends State<Categories> {
                                'Plumbing' ,
                                textAlign: TextAlign.center,
                                style: TextStyle(
-                                 fontSize: 40.0,
+                                 fontSize: 30.0,
                                  fontWeight: FontWeight.bold,
                                  color: Colors.white,
                                ),
@@ -244,9 +244,9 @@ class _CategoriesState extends State<Categories> {
                            ),
                          ),
                          Container(
-                           height: 80,
+                           height: 60,
                            padding:const EdgeInsets.all(12.0) ,
-                           width: double.infinity,
+                           width: 200,
                            child: Container(
                              decoration: BoxDecoration(
                                  color: Color(0xFFF99718),
@@ -256,7 +256,7 @@ class _CategoriesState extends State<Categories> {
                                'Painting' ,
                                textAlign: TextAlign.center,
                                style: TextStyle(
-                                 fontSize: 40.0,
+                                 fontSize: 30.0,
                                  fontWeight: FontWeight.bold,
                                  color: Colors.white,
                                ),

@@ -30,7 +30,7 @@ class _ProfileState extends State<Profile> {
                        children: const [
                          CircleAvatar(
                            radius: 60.0,
-                           backgroundImage: AssetImage('assets/images/Tawfik.jpg'),
+                           backgroundImage: AssetImage('assets/images/customer.jpg'),
                          ),
                          SizedBox(height: 10),
                          Text(

@@ -1,5 +1,9 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:open_file/open_file.dart';
 import '../ChooseProvider/ChooseProviderScreen.dart';
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 
 class Booking extends StatefulWidget{
   const  Booking({super.key});
@@ -15,6 +19,8 @@ class _BookingState extends State<Booking> {
 
   var selectedCity;
   var selectedProblem;
+  var problemImage;
+  var imageOfProblemText = 'Upload image of problem (optional)';
 
 
 
@@ -22,20 +28,31 @@ class _BookingState extends State<Booking> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+      ),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFF99718),
+
           leading: IconButton(
-            icon: const Icon(Icons.arrow_circle_left_sharp),
+            icon: const Icon(
+                Icons.arrow_circle_left_sharp,
+              color: Colors.white,
+            ),
             onPressed: () => Navigator.of(context).pop(),
           ),
+
           title: const Text(
             'Booking Page',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 30,
+              fontSize: 25,
+              color: Colors.white,
             ),
           ),
+          centerTitle: true,
+
           actions: [
             Container(
 
@@ -53,7 +70,7 @@ class _BookingState extends State<Booking> {
             children: [
               Container(
                  width: double.infinity,
-                 height: 250,
+                 height: 150,
                  decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/Booking.jpg'),
@@ -66,7 +83,7 @@ class _BookingState extends State<Booking> {
 
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 25.0, left: 15.0, right: 15.0),
+                padding: const EdgeInsets.only(top: 16.0, left: 15.0, right: 15.0),
                 child: Column(
                   children:
                   [
@@ -76,19 +93,19 @@ class _BookingState extends State<Booking> {
                         const Text(
                           'Suitable Date',
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                         ),
-                        const SizedBox(height: 20.0),
+                        const SizedBox(height: 5.0),
                         TextFormField(
                           onTap: (){
                             selectDate(context);
                           },
                           controller: dateController,
                           decoration: InputDecoration(
-                            suffixIcon: const Icon(
+                            prefixIcon: const Icon(
                                 Icons.date_range_outlined
                             ),
                             border: OutlineInputBorder(
@@ -100,27 +117,27 @@ class _BookingState extends State<Booking> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20.0),
+                    const SizedBox(height: 5.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
                           'Suitable Time',
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
 
                           ),
                         ),
-                        const SizedBox(height: 20.0),
+                        const SizedBox(height: 5.0),
                         TextFormField(
                           onTap: (){
                             selectTime(context);
                           },
                           controller: timeController,
                           decoration: InputDecoration(
-                            suffixIcon: const Icon(
+                            prefixIcon: const Icon(
                                 Icons.timer
                             ),
                             border: OutlineInputBorder(
@@ -131,28 +148,29 @@ class _BookingState extends State<Booking> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20.0),
+                    const SizedBox(height: 5.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
                           'District',
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
 
                           ),
                         ),
-                        const SizedBox(height: 20.0),
+                        const SizedBox(height: 5.0),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 5.0),
                           child: DropdownButtonFormField(
-                            icon: const Icon(Icons.arrow_drop_down_circle, ),
+                            icon: const Icon(
+                              Icons.arrow_drop_down_circle,
+                            ),
 
                             decoration:  InputDecoration(
-
-                              prefixIcon: const Icon(Icons.home, ),
+                              prefixIcon: const Icon(Icons.location_city, ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.0),
 
@@ -194,20 +212,20 @@ class _BookingState extends State<Booking> {
 
                       ],
                     ),
-                    const SizedBox(height: 20.0),
+                    const SizedBox(height: 5.0),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
                           'Choose Problem',
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
 
                           ),
                         ),
-                        const SizedBox(height: 20.0),
+                        const SizedBox(height: 5.0),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 5.0),
                           child: DropdownButtonFormField(
@@ -246,13 +264,91 @@ class _BookingState extends State<Booking> {
 
                       ],
                     ),
+                    SizedBox(
+                      height: 5,
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Container(
+                        height: 65.0,
+                        decoration: BoxDecoration(
+                          borderRadius:BorderRadius.circular(15.0) ,
+                          border: Border.all(
+                            width: 1,
+                            color: Colors.grey.shade600,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                width: 230.0,
+                                child: Text(
+                                  overflow: TextOverflow.ellipsis,
+                                  '$imageOfProblemText',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14.0,
+                                  ),
+                                )
+                            ),
+
+                            Container(
+                              padding: EdgeInsets.all(5.0),
+                              child: ElevatedButton(
+                                style:
+                                ElevatedButton.styleFrom(
+                                  backgroundColor: Color(0xFFF99718),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                ),
+
+                                child:
+                                Text(
+                                  'Choose file',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+
+                                onPressed:  () async {
+                                  final result  = await FilePicker.platform.pickFiles();
+                                  problemImage = result;
+
+
+                                  if(result == null) return;
+
+                                  //open file
+                                  final file = result.files.first;
+                                  openFile(file);
+
+                                  setState(() {
+                                    imageOfProblemText = file.name;
+                                  });
+
+
+                                  //save file permanently
+                                  await saveFilePermanently(file);
+                                },
+
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 15.0),
                     Container(
                       decoration: BoxDecoration(
                         color: Color(0xFFF99718),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      width: 200,
+                      width: 150,
                       child: MaterialButton(
                         onPressed: () {
                           Navigator.push(
@@ -265,7 +361,7 @@ class _BookingState extends State<Booking> {
                         child: const Text(
                           'Next',
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
@@ -318,6 +414,17 @@ class _BookingState extends State<Booking> {
         FocusScope.of(context).requestFocus(FocusNode());
       });
     }
+  }
+
+  void openFile(PlatformFile file){
+    OpenFile.open(file.path!);
+  }
+
+  Future<File> saveFilePermanently(PlatformFile file) async{
+    final appStorage = await getApplicationDocumentsDirectory();
+    final newFile = File('${appStorage.path}/${file.name}');
+
+    return File(file.path!).copy(newFile.path);
   }
 }
 

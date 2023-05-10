@@ -4,7 +4,7 @@ import 'package:serve_me/Provider/Screens/ProfileScreens/ProfileScreen.dart';
 import 'package:serve_me/Provider/Screens/Requests Screens/RequestsScreen.dart';
 import 'package:serve_me/Provider/Screens/Reviews Screens/ReviewScreen.dart';
 import 'package:serve_me/Provider/Screens/Schedule Screens/ScheduleScreen.dart';
-import 'package:serve_me/Provider/Screens/WalletScreen.dart';
+import 'package:serve_me/Provider/Screens/PaymentNotification.dart';
 
 class ProviderHomeLayout extends StatefulWidget{
   @override
@@ -17,14 +17,14 @@ class _ProviderHomeLayoutState extends State<ProviderHomeLayout> {
     RequestsScreen(),
     ScheduleScreen(),
     ReviewScreen(),
-    WalletScreen(),
+    PaymentNotification(),
     ProfileScreen()
   ];
   List<String> screenLable = [
     'Requests',
     'Scheduled Requests',
     'Reviews',
-    'Wallet',
+    'Payment Notifications',
     'Profile'];
   int currentIndex =0;
 
@@ -75,9 +75,9 @@ class _ProviderHomeLayoutState extends State<ProviderHomeLayout> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.account_balance_wallet_outlined,
+              Icons.money,
             ),
-            label: 'Wallet',
+            label: 'Payment',
           ),
           BottomNavigationBarItem(
             icon: Icon(

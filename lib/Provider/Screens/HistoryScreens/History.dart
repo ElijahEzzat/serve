@@ -124,24 +124,64 @@ class HistoryScreen extends StatelessWidget{
                           height: 10.0,
                         ),
 
-                        Container(
-                          height: 40.0,
-                          width: 350.0,
-                          padding: EdgeInsets.all(10.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Color(0xFFF99718),
+                        Row(
+                          children: [
+                            Text(
+                              '   Date  ',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black45,
+                              ),
                             ),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: Text(
-                            'date of service',
-                            style: TextStyle(
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black45,
+                            Container(
+                              height: 40.0,
+                              width: 130.0,
+                              padding: EdgeInsets.all(10.0),
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Color(0xFFF99718),
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: Text(
+                                'date of service',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black45,
+                                ),
+                              ),
                             ),
-                          ),
+
+                            Text(
+                              '  Time  ',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black45,
+                              ),
+                            ),
+                            Container(
+                              height: 40.0,
+                              width: 125.0,
+                              padding: EdgeInsets.all(10.0),
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Color(0xFFF99718),
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: Text(
+                                'Time of service',
+                                style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black45,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

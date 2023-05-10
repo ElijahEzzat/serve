@@ -87,25 +87,65 @@ class RequestDetails extends StatelessWidget{
           ),
 
 
-          Container(
-            height: 45.0,
-            width: 350.0,
-            padding: EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xFFF99718),
-                width: 2.0,
+          Row(
+
+            children: [
+              Text(
+                '        Date  ',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black45,
+                ),
               ),
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-            child: Text(
-              'date & time',
-              style: TextStyle(
-                fontSize: 15.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black45,
+              Container(
+                height: 40.0,
+                width: 125.0,
+                padding: EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Color(0xFFF99718),
+                  ),
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Text(
+                  'date of service',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black45,
+                  ),
+                ),
               ),
-            ),
+
+              Text(
+                '  Time  ',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black45,
+                ),
+              ),
+              Container(
+                height: 40.0,
+                width: 125.0,
+                padding: EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Color(0xFFF99718),
+                  ),
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Text(
+                  'Time of service',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black45,
+                  ),
+                ),
+              ),
+            ],
           ),
 
           SizedBox(

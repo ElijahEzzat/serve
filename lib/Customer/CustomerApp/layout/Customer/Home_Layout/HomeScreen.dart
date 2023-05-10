@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:serve_me/Customer/CustomerApp/modules/Customer/Payment/Payment.dart';
 import 'package:serve_me/Customer/CustomerApp/modules/Customer/Requests/RequestsScreen.dart';
 import '../../../modules/Customer/Categories/CategoriesScreen.dart';
 import '../../../modules/Customer/Profile/ProfileScreen.dart';
@@ -19,6 +20,7 @@ class _HomeState extends State<Home>
   List<Widget> screens = [
     const Categories() ,
     const Requests(),
+    Payment(),
     const Profile(),
   ];
 
@@ -26,6 +28,7 @@ class _HomeState extends State<Home>
       [
         'Choose Your Service',
         'Requests',
+        'Payment',
         'My Profile',
       ];
 
@@ -35,12 +38,13 @@ class _HomeState extends State<Home>
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Color(0xFFF99718),
           title:Text(
             titles[currentIndex],
             style: const TextStyle(
               fontWeight: FontWeight.bold ,
-              fontSize: 30 ,
+              fontSize: 24 ,
             ),
           ),
           actions: [
@@ -76,6 +80,13 @@ class _HomeState extends State<Home>
                   Icons.insert_invitation,
                 ),
                 label: 'Requests'
+            ),
+
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.money,
+                ),
+                label: 'Payment'
             ),
 
             BottomNavigationBarItem(
