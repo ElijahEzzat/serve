@@ -147,7 +147,7 @@ class _ScheduleScreen extends State<ScheduleScreen> {
                       Row(
                         children: [
                           Text(
-                            '   Date ',
+                            ' Date ',
                             style: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
@@ -184,7 +184,7 @@ class _ScheduleScreen extends State<ScheduleScreen> {
                           ),
                           Container(
                             height: 40.0,
-                            width: 125.0,
+                            width: 120.0,
                             padding: EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
                               border: Border.all(

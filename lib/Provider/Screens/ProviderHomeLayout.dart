@@ -6,7 +6,15 @@ import 'package:serve_me/Provider/Screens/Reviews Screens/ReviewScreen.dart';
 import 'package:serve_me/Provider/Screens/Schedule Screens/ScheduleScreen.dart';
 import 'package:serve_me/Provider/Screens/PaymentNotification.dart';
 
+
+int currentIndex =0;
+
 class ProviderHomeLayout extends StatefulWidget{
+
+  ProviderHomeLayout(int i){
+    currentIndex=i;
+  }
+
   @override
   State<ProviderHomeLayout> createState() => _ProviderHomeLayoutState();
 }
@@ -26,7 +34,7 @@ class _ProviderHomeLayoutState extends State<ProviderHomeLayout> {
     'Reviews',
     'Payment Notifications',
     'Profile'];
-  int currentIndex =0;
+
 
   @override
   Widget build(BuildContext context) {

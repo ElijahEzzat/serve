@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:serve_me/Customer/CustomerApp/modules/Customer/Payment/PaymentType.dart';
 
 class Payment extends StatelessWidget{
   @override
@@ -68,8 +69,8 @@ class Payment extends StatelessWidget{
 
                              onPressed: (){
 
-                              /* Navigator.push(context,
-                                   MaterialPageRoute(builder: (context) => RequestDetails()));*/
+                                Navigator.push(context,
+                                   MaterialPageRoute(builder: (context) => PaymentType()));
                              },
 
                              child: const Text(
@@ -100,7 +101,7 @@ class Payment extends StatelessWidget{
                            ),
                            Container(
                              height: 40.0,
-                             width: 250,
+                             width: 240,
                              padding: EdgeInsets.all(10.0),
                              decoration: BoxDecoration(
                                border: Border.all(
@@ -137,7 +138,7 @@ class Payment extends StatelessWidget{
                            ),
                            Container(
                              height: 40.0,
-                             width: 130.0,
+                             width: 125.0,
                              padding: EdgeInsets.all(10.0),
                              decoration: BoxDecoration(
                                border: Border.all(
@@ -165,7 +166,7 @@ class Payment extends StatelessWidget{
                            ),
                            Container(
                              height: 40.0,
-                             width: 130.0,
+                             width: 125.0,
                              padding: EdgeInsets.all(10.0),
                              decoration: BoxDecoration(
                                border: Border.all(
@@ -201,7 +202,7 @@ class Payment extends StatelessWidget{
                            ),
                            Container(
                              height: 40.0,
-                             width: 240,
+                             width: 230,
                              padding: EdgeInsets.all(10.0),
                              decoration: BoxDecoration(
                                border: Border.all(

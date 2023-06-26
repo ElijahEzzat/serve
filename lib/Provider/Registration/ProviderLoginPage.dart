@@ -328,7 +328,7 @@ class _ProviderLoginPageState extends State<ProviderLoginPage> {
                   onPressed: (){
                     if(formKey.currentState!.validate()){
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => ProviderHomeLayout()));
+                            MaterialPageRoute(builder: (context) => ProviderHomeLayout(0)));
                     }
                   },
 

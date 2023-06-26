@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:serve_me/Provider/Screens/ProviderHomeLayout.dart';
 import 'package:serve_me/Provider/Screens/Requests%20Screens/RequestDetails.dart';
 
 class RequestsScreen extends StatefulWidget{
@@ -157,7 +158,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                           ),
                           Container(
                             height: 40.0,
-                            width: 130.0,
+                            width: 120.0,
                             padding: EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
                               border: Border.all(
@@ -194,8 +195,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
 
                             onPressed: (){
 
-                                /*Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) => ProviderHomeLayout()));*/
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => ProviderHomeLayout(1)));
                             },
 
                             child: const Text(

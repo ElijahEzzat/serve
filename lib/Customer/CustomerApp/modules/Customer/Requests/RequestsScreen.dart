@@ -16,7 +16,7 @@ class _RequestsState extends State<Requests> {
           itemCount: 20,
           itemBuilder: (context, index) =>
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(5.0),
                 child: Container(
                   height: 150,
                   decoration: BoxDecoration(

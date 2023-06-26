@@ -296,7 +296,7 @@ class _BookingState extends State<Booking> {
                             ),
 
                             Container(
-                              padding: EdgeInsets.all(5.0),
+                              padding: EdgeInsets.all(2.0),
                               child: ElevatedButton(
                                 style:
                                 ElevatedButton.styleFrom(
