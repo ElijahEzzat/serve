@@ -244,7 +244,7 @@ class _FinishBookingState extends State<FinishBooking> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Home()),
+                                builder: (context) => Home()),
                           );
                         },
                         child: const Text(

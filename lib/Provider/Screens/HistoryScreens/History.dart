@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:serve_me/Provider/Screens/HistoryScreens/HistoryRequestDetails.dart';
-import 'package:serve_me/Provider/Screens/Requests%20Screens/RequestDetails.dart';
-import 'package:serve_me/Report.dart';
 
 class HistoryScreen extends StatelessWidget{
   @override

@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:serve_me/Customer/CustomerApp/modules/Customer/Payment/PaymentType.dart';
+import 'package:serve_me/Customer/CustomerApp/modules/Customer/Payment/PaymentScreen.dart';
 
-class Payment extends StatelessWidget{
+class Payment extends StatefulWidget{
+
+  @override
+  State<Payment> createState() => _PaymentState();
+}
+
+class _PaymentState extends State<Payment> {
+  //final _formKey = GlobalKey<FormState>();
+  var costController = TextEditingController();
+
+  int price=8;
+
   @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -67,10 +78,113 @@ class Payment extends StatelessWidget{
                                ),
                              ),
 
-                             onPressed: (){
+                             onPressed: () {
+                               /*showDialog(
+                                 context: context,
+                                 builder: (BuildContext context) {
+                                   return Form(
+                                     key: _formKey,
+                                     child: AlertDialog(
+                                       title: Text('Cost Of Service'),
+                                       content:
+                                       SingleChildScrollView(
+                                         child: Column(
+                                           children: [
+                                             Column(
+                                               children: [
 
-                                Navigator.push(context,
-                                   MaterialPageRoute(builder: (context) => PaymentType()));
+                                                 TextFormField(
+                                                   decoration: const InputDecoration(
+                                                     labelText: 'Cost Of Service',
+                                                     labelStyle: TextStyle(color: Colors.grey),
+                                                     prefixIcon: Icon(Icons.money, color: Color(0xFFF99718),),
+
+                                                     enabledBorder: OutlineInputBorder(
+                                                         borderSide: BorderSide(color: Color(0xFFF99718), width: 2),
+                                                         borderRadius: BorderRadius.all(Radius.circular(30))
+                                                     ),
+
+                                                     focusedBorder: OutlineInputBorder(
+                                                         borderSide: BorderSide(color: Color(0xFFF99718), width: 2),
+                                                         borderRadius: BorderRadius.all(Radius.circular(30))
+                                                     ),
+
+                                                     errorBorder: OutlineInputBorder(
+                                                         borderSide: BorderSide(color: Color(0xFFFF0000), width: 2),
+                                                         borderRadius: BorderRadius.all(Radius.circular(30))
+                                                     ),
+
+                                                     focusedErrorBorder: OutlineInputBorder(
+                                                         borderSide: BorderSide(color: Color(0xFFFF0000), width: 2),
+                                                         borderRadius: BorderRadius.all(Radius.circular(30))
+                                                     ),
+
+                                                   ),
+                                                   controller: costController,
+                                                   keyboardType: TextInputType.number,
+
+                                                   onFieldSubmitted: (value){
+                                                     cost = double.parse(value);
+                                                     print(value);
+                                                   },
+
+                                                   onChanged: (String value){
+                                                     print(value);
+                                                   },
+
+
+                                                   validator: (value){
+                                                     if(value!.isEmpty){
+                                                       return 'Please enter cost';
+                                                     }
+                                                     if(value == ' '){
+                                                       return 'Please enter cost';
+                                                     }
+                                                     if(!RegExp("^[0-9]").hasMatch(value)){
+                                                       return 'Please enter valid cost';
+                                                     }
+                                                     return null;
+                                                   },
+
+                                                 ),
+                                               ],
+                                             ),
+                                             SizedBox(
+                                               height: 5,
+                                             ),
+                                             ElevatedButton(
+                                               style: ElevatedButton.styleFrom(
+                                                 backgroundColor: Color(0xFFF99718),
+                                                 shape: RoundedRectangleBorder(
+                                                   borderRadius: BorderRadius.circular(20.0),
+                                                 ),
+                                               ),
+
+                                               child: Text(
+                                                 'Pay',
+                                                 style: TextStyle(
+                                                   fontSize: 20,
+                                                 ),
+                                               ),
+
+                                               onPressed: () {
+                                                 if (_formKey.currentState!.validate()){
+                                                   Navigator.push(context,
+                                                          MaterialPageRoute(builder: (context) => PaymentScreen(cost)));
+                                                 }
+                                               },
+                                             ),
+                                           ],
+
+                                         ),
+                                       ),
+                                     ),
+                                   );
+                                 },
+                               );*/
+
+                               Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => PaymentScreen(price)));
                              },
 
                              child: const Text(
@@ -211,7 +325,7 @@ class Payment extends StatelessWidget{
                                borderRadius: BorderRadius.circular(20.0),
                              ),
                              child: Text(
-                               '  ',
+                               '$price',
                                textAlign: TextAlign.center,
                                style: TextStyle(
                                  fontSize: 14.0,
@@ -234,5 +348,4 @@ class Payment extends StatelessWidget{
      )
    );
   }
-
 }

@@ -7,7 +7,6 @@ import '../../../modules/Customer/Profile/ProfileScreen.dart';
 
 
 class Home extends StatefulWidget{
-  const Home({super.key});
 
   @override
   _HomeState createState() => _HomeState();
@@ -16,6 +15,7 @@ class Home extends StatefulWidget{
 class _HomeState extends State<Home>
 {
   int currentIndex = 0;
+
 
   List<Widget> screens = [
     const Categories() ,
@@ -61,6 +61,8 @@ class _HomeState extends State<Home>
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: currentIndex,
+          selectedItemColor: Color(0xFFF99718),
+          unselectedItemColor: Colors.grey,
           onTap: (index)
           {
             setState(()
@@ -95,6 +97,7 @@ class _HomeState extends State<Home>
                 ),
                 label: 'Profile'
             ),
+
           ],
         ) ,
       ),

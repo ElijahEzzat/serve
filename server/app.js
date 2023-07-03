@@ -2,6 +2,16 @@ var paypal = require('paypal-rest-sdk');
 var express = require('express');
 var app = express();
 
+var bodyParser = require('body-parser');
+app.use(
+    bodyParser.urlencoded({
+        extended:false
+    })
+);
+app.use(bodyParser.json())
+
+var amount=77;
+
 paypal.configure({
     'mode': 'sandbox',
     'client_id': 'AZsCOnyi-brcV_SNGr65XAwY0XW0fdDn15jEz16kEqjrwqE1SRICbgGU0MZZSxVNEsAoxhH1C6qPLu_3',
@@ -10,15 +20,19 @@ paypal.configure({
 
 
 
-app.get('/pay',(req,res)=>
+app.post('/pay',(req,res)=>
 {
+    console.log(req.body);
+    amount = req.body.price;
+
+
     var create_payment_json = {
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:8000/success",
+            "return_url": "http://192.168.1.4:8000/success",
             "cancel_url": "http://cancel.url"
         },
         "transactions": [{
@@ -26,21 +40,21 @@ app.get('/pay',(req,res)=>
                 "items": [{
                     "name": "item",
                     "sku": "item",
-                    "price": "500",
+                    "price": amount,
                     "currency": "USD",
                     "quantity": 1
                 }]
             },
             "amount": {
                 "currency": "USD",
-                "total": "500"
+                "total": amount
             },
             "description": "This is the payment description."
         }]
     };
     
     
-    paypal.payment.create(create_payment_json, function (error, payment) {
+    paypal.payment.create(create_payment_json, (error, payment) => {
         if (error) {
             throw error;
         } else {
@@ -66,26 +80,29 @@ app.get('/success',(req,res)=>
         "transactions": [{
             "amount": {
                 "currency": "USD",
-                "total": "500"
+                "total": amount
             }
         }]
     };
     
     var paymentId = req.query.paymentId;
     
-    paypal.payment.execute(paymentId, execute_payment_json, (error, payment) => {
+    paypal.payment.execute(paymentId, execute_payment_json,  (error, payment)=> {
         if (error) {
             console.log(error.response);
             throw error;
         } else {
             console.log("Get Payment Response");
             console.log(JSON.stringify(payment));
+            res.send('done');
+            
         }
     });
+
 });
 
 //run server
-app.listen(8000,(req,res)=>
+app.listen(8000,'192.168.1.4', (req,res)=>
 {
     console.log('server started');
 });
